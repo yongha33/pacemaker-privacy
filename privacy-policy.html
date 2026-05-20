@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>개인정보처리방침 — 페이스메이커</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: #0c0c0e;
+      color: #e0e0e0;
+      line-height: 1.75;
+      padding: 0 20px 80px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 56px 0 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.4px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 36px 0 12px;
+      padding-left: 12px;
+      border-left: 3px solid #4ADE80;
+    }
+
+    p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 13px;
+    }
+
+    th {
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    td {
+      padding: 10px 14px;
+      color: rgba(255,255,255,0.60);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .highlight {
+      background: rgba(74,222,128,0.06);
+      border: 1px solid rgba(74,222,128,0.15);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 16px 0;
+    }
+
+    .highlight p {
+      margin: 0;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+    }
+
+    a {
+      color: #4ADE80;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>개인정보처리방침</h1>
+      <p>페이스메이커(Pacemaker) · 최종 수정: 2026년 5월 20일</p>
+    </header>
+
+    <div class="highlight">
+      <p>페이스메이커는 사용자의 개인정보를 소중히 여깁니다. 본 방침은 앱이 수집하는 정보, 사용 목적, 보관 방식 등을 설명합니다.</p>
+    </div>
+
+    <h2>1. 수집하는 정보</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>수집 방식</th>
+          <th>목적</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>위치 정보 (GPS)</td>
+          <td>앱 사용 중 기기에서 직접 수집</td>
+          <td>도보 경로 계산, 목적지까지 거리 측정, 캐릭터 이동 추적</td>
+        </tr>
+        <tr>
+          <td>몰입 기록</td>
+          <td>기기 내 저장 (AsyncStorage)</td>
+          <td>여정 날짜·시간·거리·목적 통계 표시</td>
+        </tr>
+        <tr>
+          <td>앱 사용 이벤트</td>
+          <td>Firebase Analytics (Google)</td>
+          <td>여정 시작·완료·포기, 목적지명, 소요 시간 등 익명 통계 수집</td>
+        </tr>
+        <tr>
+          <td>기기 식별자</td>
+          <td>Firebase SDK 자동 수집</td>
+          <td>익명 사용 통계 분석 (개인 특정 불가)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. 수집하지 않는 정보</h2>
+    <ul>
+      <li>이름, 이메일, 전화번호 등 계정 정보</li>
+      <li>결제 정보</li>
+      <li>주소록, 카메라, 마이크 데이터</li>
+      <li>백그라운드 위치 (앱이 화면에 있을 때만 위치 접근)</li>
+    </ul>
+
+    <h2>3. 정보의 이용 목적</h2>
+    <ul>
+      <li>도보 경로 계산 및 실시간 이동 추적</li>
+      <li>주간·연간 몰입 기록 통계 제공</li>
+      <li>앱 기능 개선을 위한 익명 사용 패턴 분석</li>
+    </ul>
+
+    <h2>4. 제3자 서비스</h2>
+    <p>앱은 다음 외부 서비스를 활용합니다. 각 서비스의 개인정보처리방침을 함께 확인해 주세요.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>서비스</th>
+          <th>제공사</th>
+          <th>목적</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Maps SDK</td>
+          <td>Google LLC</td>
+          <td>지도 표시</td>
+        </tr>
+        <tr>
+          <td>OSRM Routing API</td>
+          <td>OpenStreetMap 재단</td>
+          <td>도보 경로 계산 (좌표만 전송, 개인정보 미포함)</td>
+        </tr>
+        <tr>
+          <td>Firebase Analytics</td>
+          <td>Google LLC</td>
+          <td>익명 앱 사용 통계</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Google 개인정보처리방침:
+      <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
+    </p>
+
+    <h2>5. 데이터 보관 및 삭제</h2>
+    <ul>
+      <li><strong>기기 내 데이터 (몰입 기록, 위치 등)</strong>: 앱 삭제 시 자동으로 모두 삭제됩니다.</li>
+      <li><strong>Firebase Analytics 데이터</strong>: Google 정책에 따라 최대 14개월 보관 후 자동 삭제됩니다.</li>
+      <li>수집된 데이터는 외부 서버에 전송되거나 별도 저장되지 않습니다.</li>
+    </ul>
+
+    <h2>6. 아동 개인정보 보호</h2>
+    <p>
+      페이스메이커는 만 14세 미만 아동을 대상으로 하지 않습니다.
+      만 14세 미만 아동의 개인정보가 수집된 사실을 인지하는 경우,
+      즉시 해당 정보를 삭제합니다.
+    </p>
+
+    <h2>7. 개인정보 보호 책임자 및 문의</h2>
+    <p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>
+    <ul>
+      <li>개발자: 김용하</li>
+      <li>이메일: <a href="mailto:rladydgk4627@gmail.com">rladydgk4627@gmail.com</a></li>
+    </ul>
+
+    <h2>8. 방침 변경 안내</h2>
+    <p>
+      본 개인정보처리방침은 법령 또는 서비스 변경에 따라 업데이트될 수 있습니다.
+      변경 시 앱 업데이트 노트 또는 본 페이지를 통해 공지합니다.
+    </p>
+
+    <footer>
+      <p>페이스메이커 · com.pacemaker.app · © 2026 김용하</p>
+    </footer>
+
+  </div>
+</body>
+</html>
