@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>개인정보처리방침 — Walk Focus</title>
+  <title>개인정보처리방침 / Privacy Policy — Walk Focus</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif;
       background: #0c0c0e;
       color: #e0e0e0;
       line-height: 1.75;
@@ -26,6 +26,13 @@
       margin-bottom: 40px;
     }
 
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
     header h1 {
       font-size: 26px;
       font-weight: 700;
@@ -37,6 +44,32 @@
     header p {
       font-size: 13px;
       color: rgba(255,255,255,0.35);
+    }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .lang-btn {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: transparent;
+      color: rgba(255,255,255,0.40);
+      transition: all 0.18s ease;
+    }
+
+    .lang-btn.active {
+      background: #4ADE80;
+      border-color: #4ADE80;
+      color: #0c0c0e;
     }
 
     h2 {
@@ -118,132 +151,268 @@
       font-size: 12px;
       color: rgba(255,255,255,0.25);
     }
+
+    /* Language sections */
+    .lang-ko, .lang-en { display: none; }
+    body.ko .lang-ko   { display: block; }
+    body.en .lang-en   { display: block; }
   </style>
 </head>
-<body>
+<body class="ko">
   <div class="container">
 
     <header>
-      <h1>개인정보처리방침</h1>
-      <p>Walk Focus · 최종 수정: 2026년 5월 20일</p>
+      <div class="header-top">
+        <div>
+          <h1 class="lang-ko">개인정보처리방침</h1>
+          <h1 class="lang-en">Privacy Policy</h1>
+          <p class="lang-ko">Walk Focus · 최종 수정: 2026년 5월 20일</p>
+          <p class="lang-en">Walk Focus · Last updated: May 20, 2026</p>
+        </div>
+        <div class="lang-toggle">
+          <button class="lang-btn active" onclick="setLang('ko')">KO</button>
+          <button class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
     </header>
 
-    <div class="highlight">
-      <p>Walk Focus는 사용자의 개인정보를 소중히 여깁니다. 본 방침은 앱이 수집하는 정보, 사용 목적, 보관 방식 등을 설명합니다.</p>
+    <!-- ── 한국어 ──────────────────────────────────────────────── -->
+    <div class="lang-ko">
+
+      <div class="highlight">
+        <p>Walk Focus는 사용자의 개인정보를 소중히 여깁니다. 본 방침은 앱이 수집하는 정보, 사용 목적, 보관 방식 등을 설명합니다.</p>
+      </div>
+
+      <h2>1. 수집하는 정보</h2>
+      <table>
+        <thead>
+          <tr><th>항목</th><th>수집 방식</th><th>목적</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>위치 정보 (GPS)</td>
+            <td>앱 사용 중 기기에서 직접 수집</td>
+            <td>도보 경로 계산, 목적지까지 거리 측정, 캐릭터 이동 추적</td>
+          </tr>
+          <tr>
+            <td>몰입 기록</td>
+            <td>기기 내 저장 (AsyncStorage)</td>
+            <td>여정 날짜·시간·거리·목적 통계 표시</td>
+          </tr>
+          <tr>
+            <td>앱 사용 이벤트</td>
+            <td>Firebase Analytics (Google)</td>
+            <td>여정 시작·완료·포기, 목적지명, 소요 시간 등 익명 통계 수집</td>
+          </tr>
+          <tr>
+            <td>기기 식별자</td>
+            <td>Firebase SDK 자동 수집</td>
+            <td>익명 사용 통계 분석 (개인 특정 불가)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>2. 수집하지 않는 정보</h2>
+      <ul>
+        <li>이름, 이메일, 전화번호 등 계정 정보</li>
+        <li>결제 정보</li>
+        <li>주소록, 카메라, 마이크 데이터</li>
+        <li>백그라운드 위치 (앱이 화면에 있을 때만 위치 접근)</li>
+      </ul>
+
+      <h2>3. 정보의 이용 목적</h2>
+      <ul>
+        <li>도보 경로 계산 및 실시간 이동 추적</li>
+        <li>주간·연간 몰입 기록 통계 제공</li>
+        <li>앱 기능 개선을 위한 익명 사용 패턴 분석</li>
+      </ul>
+
+      <h2>4. 제3자 서비스</h2>
+      <p>앱은 다음 외부 서비스를 활용합니다. 각 서비스의 개인정보처리방침을 함께 확인해 주세요.</p>
+      <table>
+        <thead>
+          <tr><th>서비스</th><th>제공사</th><th>목적</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Maps SDK</td>
+            <td>Google LLC</td>
+            <td>지도 표시</td>
+          </tr>
+          <tr>
+            <td>OSRM Routing API</td>
+            <td>OpenStreetMap 재단</td>
+            <td>도보 경로 계산 (좌표만 전송, 개인정보 미포함)</td>
+          </tr>
+          <tr>
+            <td>Firebase Analytics</td>
+            <td>Google LLC</td>
+            <td>익명 앱 사용 통계</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Google 개인정보처리방침:
+        <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
+      </p>
+
+      <h2>5. 데이터 보관 및 삭제</h2>
+      <ul>
+        <li><strong>기기 내 데이터 (몰입 기록, 위치 등)</strong>: 앱 삭제 시 자동으로 모두 삭제됩니다.</li>
+        <li><strong>Firebase Analytics 데이터</strong>: Google 정책에 따라 최대 14개월 보관 후 자동 삭제됩니다.</li>
+        <li>수집된 데이터는 외부 서버에 전송되거나 별도 저장되지 않습니다.</li>
+      </ul>
+
+      <h2>6. 아동 개인정보 보호</h2>
+      <p>
+        Walk Focus는 만 14세 미만 아동을 대상으로 하지 않습니다.
+        만 14세 미만 아동의 개인정보가 수집된 사실을 인지하는 경우,
+        즉시 해당 정보를 삭제합니다.
+      </p>
+
+      <h2>7. 개인정보 보호 책임자 및 문의</h2>
+      <p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>
+      <ul>
+        <li>개발자: 김용하</li>
+        <li>이메일: <a href="mailto:rladydgk4627@gmail.com">rladydgk4627@gmail.com</a></li>
+      </ul>
+
+      <h2>8. 방침 변경 안내</h2>
+      <p>
+        본 개인정보처리방침은 법령 또는 서비스 변경에 따라 업데이트될 수 있습니다.
+        변경 시 앱 업데이트 노트 또는 본 페이지를 통해 공지합니다.
+      </p>
+
     </div>
 
-    <h2>1. 수집하는 정보</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>항목</th>
-          <th>수집 방식</th>
-          <th>목적</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>위치 정보 (GPS)</td>
-          <td>앱 사용 중 기기에서 직접 수집</td>
-          <td>도보 경로 계산, 목적지까지 거리 측정, 캐릭터 이동 추적</td>
-        </tr>
-        <tr>
-          <td>몰입 기록</td>
-          <td>기기 내 저장 (AsyncStorage)</td>
-          <td>여정 날짜·시간·거리·목적 통계 표시</td>
-        </tr>
-        <tr>
-          <td>앱 사용 이벤트</td>
-          <td>Firebase Analytics (Google)</td>
-          <td>여정 시작·완료·포기, 목적지명, 소요 시간 등 익명 통계 수집</td>
-        </tr>
-        <tr>
-          <td>기기 식별자</td>
-          <td>Firebase SDK 자동 수집</td>
-          <td>익명 사용 통계 분석 (개인 특정 불가)</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- ── English ────────────────────────────────────────────── -->
+    <div class="lang-en">
 
-    <h2>2. 수집하지 않는 정보</h2>
-    <ul>
-      <li>이름, 이메일, 전화번호 등 계정 정보</li>
-      <li>결제 정보</li>
-      <li>주소록, 카메라, 마이크 데이터</li>
-      <li>백그라운드 위치 (앱이 화면에 있을 때만 위치 접근)</li>
-    </ul>
+      <div class="highlight">
+        <p>Walk Focus is committed to protecting your privacy. This policy explains what information the app collects, how it is used, and how it is stored.</p>
+      </div>
 
-    <h2>3. 정보의 이용 목적</h2>
-    <ul>
-      <li>도보 경로 계산 및 실시간 이동 추적</li>
-      <li>주간·연간 몰입 기록 통계 제공</li>
-      <li>앱 기능 개선을 위한 익명 사용 패턴 분석</li>
-    </ul>
+      <h2>1. Information We Collect</h2>
+      <table>
+        <thead>
+          <tr><th>Data</th><th>How Collected</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Location (GPS)</td>
+            <td>Collected directly from device while app is in use</td>
+            <td>Walking route calculation, distance measurement to destination, character movement tracking</td>
+          </tr>
+          <tr>
+            <td>Focus session history</td>
+            <td>Stored on device (AsyncStorage)</td>
+            <td>Displaying journey date, time, distance, and focus statistics</td>
+          </tr>
+          <tr>
+            <td>App usage events</td>
+            <td>Firebase Analytics (Google)</td>
+            <td>Anonymous statistics: journey start/complete/abandon, destination name, duration, etc.</td>
+          </tr>
+          <tr>
+            <td>Device identifier</td>
+            <td>Automatically collected by Firebase SDK</td>
+            <td>Anonymous usage analytics (not linked to any individual)</td>
+          </tr>
+        </tbody>
+      </table>
 
-    <h2>4. 제3자 서비스</h2>
-    <p>앱은 다음 외부 서비스를 활용합니다. 각 서비스의 개인정보처리방침을 함께 확인해 주세요.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>서비스</th>
-          <th>제공사</th>
-          <th>목적</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Google Maps SDK</td>
-          <td>Google LLC</td>
-          <td>지도 표시</td>
-        </tr>
-        <tr>
-          <td>OSRM Routing API</td>
-          <td>OpenStreetMap 재단</td>
-          <td>도보 경로 계산 (좌표만 전송, 개인정보 미포함)</td>
-        </tr>
-        <tr>
-          <td>Firebase Analytics</td>
-          <td>Google LLC</td>
-          <td>익명 앱 사용 통계</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
-      Google 개인정보처리방침:
-      <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
-    </p>
+      <h2>2. Information We Do Not Collect</h2>
+      <ul>
+        <li>Name, email address, phone number, or any account credentials</li>
+        <li>Payment information</li>
+        <li>Contacts, camera, or microphone data</li>
+        <li>Background location (location is only accessed while the app is on screen)</li>
+      </ul>
 
-    <h2>5. 데이터 보관 및 삭제</h2>
-    <ul>
-      <li><strong>기기 내 데이터 (몰입 기록, 위치 등)</strong>: 앱 삭제 시 자동으로 모두 삭제됩니다.</li>
-      <li><strong>Firebase Analytics 데이터</strong>: Google 정책에 따라 최대 14개월 보관 후 자동 삭제됩니다.</li>
-      <li>수집된 데이터는 외부 서버에 전송되거나 별도 저장되지 않습니다.</li>
-    </ul>
+      <h2>3. How We Use Your Information</h2>
+      <ul>
+        <li>Calculating walking routes and tracking real-time movement</li>
+        <li>Providing weekly and lifetime focus session statistics</li>
+        <li>Analyzing anonymous usage patterns to improve app features</li>
+      </ul>
 
-    <h2>6. 아동 개인정보 보호</h2>
-    <p>
-      Walk Focus는 만 14세 미만 아동을 대상으로 하지 않습니다.
-      만 14세 미만 아동의 개인정보가 수집된 사실을 인지하는 경우,
-      즉시 해당 정보를 삭제합니다.
-    </p>
+      <h2>4. Third-Party Services</h2>
+      <p>The app uses the following third-party services. Please review each provider's privacy policy as well.</p>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Provider</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Maps SDK</td>
+            <td>Google LLC</td>
+            <td>Map display</td>
+          </tr>
+          <tr>
+            <td>OSRM Routing API</td>
+            <td>OpenStreetMap Foundation</td>
+            <td>Walking route calculation (coordinates only — no personal data transmitted)</td>
+          </tr>
+          <tr>
+            <td>Firebase Analytics</td>
+            <td>Google LLC</td>
+            <td>Anonymous app usage statistics</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Google Privacy Policy:
+        <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
+      </p>
 
-    <h2>7. 개인정보 보호 책임자 및 문의</h2>
-    <p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>
-    <ul>
-      <li>개발자: 김용하</li>
-      <li>이메일: <a href="mailto:rladydgk4627@gmail.com">rladydgk4627@gmail.com</a></li>
-    </ul>
+      <h2>5. Data Retention and Deletion</h2>
+      <ul>
+        <li><strong>On-device data (focus history, location, etc.)</strong>: Automatically deleted when the app is uninstalled.</li>
+        <li><strong>Firebase Analytics data</strong>: Retained for up to 14 months per Google's policy, then automatically deleted.</li>
+        <li>No collected data is transmitted to or stored on external servers operated by the developer.</li>
+      </ul>
 
-    <h2>8. 방침 변경 안내</h2>
-    <p>
-      본 개인정보처리방침은 법령 또는 서비스 변경에 따라 업데이트될 수 있습니다.
-      변경 시 앱 업데이트 노트 또는 본 페이지를 통해 공지합니다.
-    </p>
+      <h2>6. Children's Privacy</h2>
+      <p>
+        Walk Focus is not directed at children under the age of 13.
+        If we become aware that personal information has been collected from a child under 13,
+        we will delete that information immediately.
+      </p>
+
+      <h2>7. Contact</h2>
+      <p>If you have any questions about this privacy policy or data practices, please contact us:</p>
+      <ul>
+        <li>Developer: Youngha Kim</li>
+        <li>Email: <a href="mailto:rladydgk4627@gmail.com">rladydgk4627@gmail.com</a></li>
+      </ul>
+
+      <h2>8. Changes to This Policy</h2>
+      <p>
+        This privacy policy may be updated from time to time in response to changes in law or app features.
+        Any changes will be announced via app update notes or on this page.
+      </p>
+
+    </div>
 
     <footer>
-      <p>Walk Focus · com.pacemaker.app · © 2026 김용하</p>
+      <p class="lang-ko">Walk Focus · com.pacemaker.app · © 2026 김용하</p>
+      <p class="lang-en">Walk Focus · com.pacemaker.app · © 2026 Youngha Kim</p>
     </footer>
 
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.body.className = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+
+    // 브라우저 언어 자동 감지
+    const browserLang = (navigator.language || 'ko').toLowerCase();
+    setLang(browserLang.startsWith('ko') ? 'ko' : 'en');
+  </script>
 </body>
 </html>
